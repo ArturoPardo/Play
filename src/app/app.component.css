@@ -4,7 +4,7 @@
     border-top: 60px solid transparent;
     border-bottom: 60px solid transparent;
     border-left: 60px solid white;
-    margin-left: 6px;
+    margin-left: 6.4px;
     float:left;
 
   }
@@ -28,7 +28,7 @@
    
     float:left;
     position: absolute;
-    margin-top: 68px;
+    margin-top: 67px;
     margin-left: 68px;
     z-index: 3;
    
@@ -37,7 +37,7 @@
    
     float:left;
     position: absolute;
-    margin-top: 135px;
+    margin-top: 134px;
   
     z-index: 4;
    
@@ -52,4 +52,31 @@
   height:250px;
   text-align: center;
 
+  }
+  .main-menu{
+      background-color: white;
+      height: 35px;
+      position: fixed;
+   bottom: 1px;
+      padding: 0;
+      width: 100%;
+     
+  }
+  ul {display:flex;
+    justify-content: space-between;
+ 
+    padding: 0 10px;
+}
+  li{   display: inline;
+
+  }
+  li a{
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .2rem;
+  
+    text-decoration: none;
+  
+    color: #222;
   }
