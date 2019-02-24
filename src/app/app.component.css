@@ -49,6 +49,7 @@
   border-bottom: 60px solid transparent;
   border-right: 60px solid #FF6699;
   float: left;
+  display:block;
 
 }
 

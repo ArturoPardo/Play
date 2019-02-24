@@ -1,0 +1,29 @@
+.listado {
+  width: 50%;
+  position: absolute;
+  height: 50%;
+  right: 0px;
+  z-index: 0;
+ 
+}
+
+#lista {
+ border-left:1px solid red;
+ margin-top:23px;
+ margin-left:0px;
+ padding-left: 20px;
+ display:none;
+width: 50%;
+float:left;
+
+}
+
+.user_list {
+  line-height: 2em;
+  font-size: .75em;
+  color: #606060;
+ 
+  margin-right: 20px;
+  float:left;
+
+}
