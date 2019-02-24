@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myapp';
+  triangles:string[]=[];
+
+  anyadirTarea(text) {
+    this.triangles.push(text);
+    console.log(this.triangles);
+  }
 }
