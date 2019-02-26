@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter  } from '@angular/core';
 
 @Component({
   selector: 'app-listado',
@@ -7,8 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListadoComponent implements OnInit {
   @Input() arrData;
-  borrado(){
-    console.log("borro");
+  @Output() borrarTarea = new EventEmitter();
+  borrado(tarea){
+    this.borrarTarea.emit(tarea);
+    console.log('borrarTarea');
   }
   constructor() { }
 

@@ -3,7 +3,7 @@
   height: 0;
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-left: 60px solid transparent;
+  border-left: 60px solid yellow;
   margin-left: 6px;
   float: left;
 
@@ -78,7 +78,7 @@
   height: 0;
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-right: 60px solid transparent;
+  border-right: 60px solid pink;
   float: left;
 }
 

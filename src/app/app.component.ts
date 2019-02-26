@@ -8,11 +8,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
+
   title = 'myapp';
   // triangles:string[]=[];
   triangles: string[] = JSON.parse(localStorage.getItem("text")) || []; //Intento cargar el array de localStorage o uno
+
+  eliminarTarea(tarea) {
+    
+        console.log("eliminar tarea" +tarea);
+       
+          for(let i=0;i<this.triangles.length;i++){
+          if(tarea ==this.triangles[i]){
+            this.triangles.splice(i,1);
+           
+    }
+  }
+  this.guardaLocalStorage();
+}
+  
+
+
+
+
+
+  Puta(){console.log("putaaaaaaaaa");}
   giroGlobal() {
+  
+
+
+
 
     var list1 = document.getElementsByClassName("central") as HTMLCollectionOf < HTMLElement > ;
     var pis = 180;
@@ -112,8 +136,15 @@ this.giroRosa();
     
     this.triangles.push(text);
     if (this.triangles.length == 5) { 
-
-      setTimeout(this.giroGlobal, 2800);
+      setTimeout(this.giroAzul, 4000);
+      setTimeout(this.giroRosa, 4000);
+      setTimeout(this.giroGlobal, 5000);
+      var lista = document.getElementById("animate");
+      lista.style.display = "none";
+      
+      
+     
+      
   
   
       

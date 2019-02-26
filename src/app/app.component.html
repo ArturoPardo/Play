@@ -1,5 +1,5 @@
 <app-creacion (datoExportar)="anyadirTarea($event)" (vaciarL)="vaciarLocal($event)"></app-creacion>
-<app-listado [arrData]="triangles" ></app-listado>
+<app-listado [arrData]="triangles" (borrarTarea)="eliminarTarea($event)"></app-listado>
 
 <div class="central">
 
