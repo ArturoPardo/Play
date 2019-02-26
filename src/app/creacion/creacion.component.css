@@ -5,7 +5,20 @@
     height: 50%;
     z-index:1 ;
   }
-  
+ .off{
+  width: 10px; 
+  height: 10px; 
+
+  background: yellow;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+    bottom: 0px;
+    position: absolute;
+    margin-left: 15px;
+  }
   input {
     border: none;
     padding: 5px;

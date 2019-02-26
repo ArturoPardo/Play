@@ -1,4 +1,4 @@
-import { Component,  Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 
@@ -12,7 +12,24 @@ export class AppComponent {
   title = 'myapp';
   // triangles:string[]=[];
   triangles: string[] = JSON.parse(localStorage.getItem("text")) || []; //Intento cargar el array de localStorage o uno
+  giroGlobal() {
 
+    var list1 = document.getElementsByClassName("central") as HTMLCollectionOf < HTMLElement > ;
+    var pis = 180;
+    var ideas = setInterval(Rote, 0.1);
+
+    function Rote() {
+      if (pis == 0) {
+        clearInterval(ideas);
+        console.log("g-cont3");
+
+      } else {
+        pis--;
+
+        list1[0].style.transform = 'rotate(' + pis + 'deg)';
+      }
+    }
+  }
 
  vaciarLocal(){
   console.log("llega la funcion!");
@@ -77,15 +94,30 @@ this.giroRosa();
 
   guardaLocalStorage() {
     localStorage.setItem("text", JSON.stringify(this.triangles)); //Intento guardarlo en localStorage
-
   }
+ 
 
 
 
 
   anyadirTarea(text) {
+    
+    if (this.triangles.length ==5) {
+      
+      if(confirm('Completed!! max 5 tasks!! - Do you want remove the list?' )){this.vaciarLocal();}
+      
+      console.log("5");}
+
+    else{
+    
     this.triangles.push(text);
-console.log("jjjj" +this.Data);
+    if (this.triangles.length == 5) { 
+
+      setTimeout(this.giroGlobal, 2800);
+  
+  
+      
+    }
  
     this.guardaLocalStorage();
     if (this.triangles.length > 1) {
@@ -101,14 +133,14 @@ console.log("jjjj" +this.Data);
     var circle = document.getElementById("circle");
     circle.style.display = "none";
 
-
+    
 
     // ----function triangle-----------
     var elem = document.getElementById("animate");
     var pos = 0;
     var id = setInterval(frame, 7);
 
-
+  
     // ......
 
 
@@ -116,8 +148,8 @@ console.log("jjjj" +this.Data);
     function frame() {
       if (pos == 100) {
         console.log("llego flecha");
-
-
+         
+          
 
         // ----triangulo----------
         var list = document.getElementsByClassName("cont1") as HTMLCollectionOf < HTMLElement > ;
@@ -141,7 +173,7 @@ console.log("jjjj" +this.Data);
 
 
         clearInterval(id);
-
+       
 
 
         // ----circle-----------
@@ -185,8 +217,7 @@ console.log("jjjj" +this.Data);
           else {
             pas++;
             circle.style.bottom = pas + '%';
-            var lista = document.getElementById("lista");
-            lista.style.display = "none";
+       
 
           }
         }
@@ -205,7 +236,7 @@ console.log("jjjj" +this.Data);
       }
     }
 
-
+    
 
 
 
@@ -215,4 +246,6 @@ console.log("jjjj" +this.Data);
 
 
   }
+ 
+}
 }

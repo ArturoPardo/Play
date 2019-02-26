@@ -7,6 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListadoComponent implements OnInit {
   @Input() arrData;
+  borrado(){
+    console.log("borro");
+  }
   constructor() { }
 
   ngOnInit() {
