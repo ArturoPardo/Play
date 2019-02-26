@@ -111,11 +111,6 @@
 
 }
 
-.cont3:hover {
-  transform: rotate(-90deg);
-  transition-duration: 1.3s;
-
-}
 
 .cont1:hover {
   transform: rotate(-90deg);
