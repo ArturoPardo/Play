@@ -1,9 +1,5 @@
-import {
-  Component
-} from '@angular/core';
-import {
-  FunctionCall
-} from '@angular/compiler';
+import { Component,  Input } from '@angular/core';
+
 
 
 @Component({
@@ -12,10 +8,24 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+ 
   title = 'myapp';
   // triangles:string[]=[];
   triangles: string[] = JSON.parse(localStorage.getItem("text")) || []; //Intento cargar el array de localStorage o uno
-  vacío
+
+
+ vaciarLocal(){
+  console.log("llega la funcion!");
+  this.triangles=[];
+
+  var circle = document.getElementById("circle");
+    circle.style.display = "none";
+    var animate = document.getElementById("animate");
+   animate.style.top = '-10px';
+    
+this.giroAzul();
+this.giroRosa();
+ }
 
   // -------------------regreso-----------
 
@@ -75,6 +85,8 @@ export class AppComponent {
 
   anyadirTarea(text) {
     this.triangles.push(text);
+console.log("jjjj" +this.Data);
+ 
     this.guardaLocalStorage();
     if (this.triangles.length > 1) {
       this.giroAzul();
