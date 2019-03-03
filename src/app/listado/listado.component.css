@@ -8,13 +8,14 @@
 }
 
 #lista {
- border-left:1px solid#FF6699;
+ border-left:1px solid #00a168;
 
  padding: 20px;
 
  display:none;
 width: 100%;
 float:left;
+margin-top: 20px;
 
 
 
@@ -23,11 +24,11 @@ float:left;
 .user_list {
  
   font-size: .75em;
-  color:orange;
+  color: #0086bd;
 width: 100%;
  border-bottom:1px solid #565656;
   float:right;
- 
+  font-weight: bold;
 
   margin-bottom: 5px;
   min-height: 20px;
@@ -37,7 +38,7 @@ width: 100%;
 .borro{ width: 10px; 
   height: 10px; 
 
-  background: yellow;
+  background:#FFd100;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);

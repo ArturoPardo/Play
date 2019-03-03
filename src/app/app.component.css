@@ -3,7 +3,7 @@
   height: 0;
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-left: 60px solid yellow;
+  border-left: 60px solid transparent;
   margin-left: 6px;
   float: left;
 
@@ -14,7 +14,7 @@
   height: 0;
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-left: 60px solid #eaeaea;
+  border-left: 60px solid#00a168;
   margin-left: 6px;
   float: left;
 
@@ -25,7 +25,7 @@
   height: 0;
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-left: 60px solid #00B7EF;
+  border-left: 60px solid #0086bd;
   margin-left: 6px;
   float: left;
 
@@ -36,7 +36,7 @@
   height: 0;
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-left: 60px solid greenyellow;
+  border-left: 60px solid transparent;
   margin-left: 6px;
   float: left;
 
@@ -47,7 +47,7 @@
   height: 0;
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-right: 60px solid #FF6699;
+  border-right: 60px solid #c20233;
   float: left;
   display:block;
 
@@ -58,7 +58,7 @@
   height: 0;
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-right: 60px solid orange;
+  border-right: 60px solid #FFd100;
   float: left;
 
 }
@@ -68,7 +68,7 @@
   height: 0;
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-right: 60px solid #eaeaea;
+  border-right: 60px solid transparent;
   float: left;
 
 }
@@ -78,7 +78,7 @@
   height: 0;
   border-top: 60px solid transparent;
   border-bottom: 60px solid transparent;
-  border-right: 60px solid pink;
+  border-right: 60px solid transparent;
   float: left;
 }
 

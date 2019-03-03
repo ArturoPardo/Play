@@ -9,7 +9,7 @@
   width: 10px; 
   height: 10px; 
 
-  background: yellow;
+  background: #00a168;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -23,11 +23,12 @@
     border: none;
     padding: 5px;
     background-color: transparent;
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid #c20233;
     color: #000;
     float:left;
     margin: 10px;
-    color:greenyellow;
+    color: #0086bd;
+    font-weight: bold;
   
   }
   
@@ -50,7 +51,7 @@
         -moz-border-radius: 10px 10px 10px 10px;
         -webkit-border-radius: 10px 10px 10px 10px;
         border: 0px solid #000000;
-        background-color:#FF6699;
+        background-color:#c20233;
         width: 10px;
         height: 10px;
         position: absolute;
