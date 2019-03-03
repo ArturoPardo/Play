@@ -1,35 +1,26 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
+import { Component} from '@angular/core';
+import { DataManagerService } from '../data-manager.service';
 @Component({
   selector: 'app-creacion',
   templateUrl: './creacion.component.html',
   styleUrls: ['./creacion.component.css']
 })
-export class CreacionComponent implements OnInit {
-  @Output() datoExportar = new EventEmitter();
-  @Output() vaciarL = new EventEmitter();
+export class CreacionComponent  {
   campoVacio = '';
-  vaciado = '';
-  primeraFun(ev) {
-    console.log('esta llegando!');
-    if (ev.keyCode === 13 && this.campoVacio.trim() !== '') {
-      console.log('La tarea para añadir es:', this.campoVacio);
-      this.datoExportar.emit(this.campoVacio.trim());
-      this.campoVacio = '';}
+  constructor(private dataService: DataManagerService) {}
+  addList(ev)  {
+     console.log('esta llegando!');
+    if (ev.keyCode === 13 && ev.target.value.trim() !== '') {
+      console.log('intro!');
+      this.dataService.addNewList(ev.target.value.trim());
+      ev.target.value = '';
     }
-
-    vaciarLocal()
-    {
-      this.vaciarL.emit(this.vaciado);
-    
-    console.log(this.vaciado);}
-
-
-
-
-  constructor() { }
-
-  ngOnInit() {
   }
+  vaciarLocal(){
+    this.dataService.vaciandoLocal();
+  }
+  
+ 
+  
 
 }

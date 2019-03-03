@@ -1,0 +1,156 @@
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid transparent;
+  margin-left: 6px;
+  float: left;
+
+}
+
+.arrow-right-grey {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid#00a168;
+  margin-left: 6px;
+  float: left;
+
+}
+
+.arrow-right-blue {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid #0086bd;
+  margin-left: 6px;
+  float: left;
+
+}
+
+.arrow-right-green {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid transparent;
+  margin-left: 6px;
+  float: left;
+
+}
+
+.arrow-left-pink {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-right: 60px solid #c20233;
+  float: left;
+  display: block;
+
+}
+
+.arrow-left-orange {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-right: 60px solid #FFd100;
+  float: left;
+
+}
+
+.arrow-left-grey {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-right: 60px solid transparent;
+  float: left;
+
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-right: 60px solid transparent;
+  float: left;
+}
+
+.cont {
+
+  float: left;
+  position: absolute;
+  margin-top: 0px;
+  z-index: 2;
+  margin-left: 67px;
+}
+
+.cont1 {
+
+  float: left;
+  position: absolute;
+  margin-top: 67px;
+  margin-left: 134px;
+  z-index: 3;
+
+}
+
+.cont2 {
+
+  float: left;
+  position: absolute;
+  margin-top: 134px;
+  margin-left: 67px;
+  z-index: 0;
+
+}
+
+
+.cont3 {
+
+  float: left;
+  position: absolute;
+  margin-top: 67px;
+  margin-left: 0px;
+  z-index: 5;
+}
+
+.central {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 264px;
+  margin-left: -130px;
+  margin-top: -128px;
+  height: 256px;
+  text-align: center;
+
+}
+
+li {
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 30px solid white;
+  margin-top: 20px;
+  float: left;
+
+
+}
+
+li a {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .2rem;
+  text-decoration: none;
+
+}

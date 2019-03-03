@@ -1,0 +1,21 @@
+
+.name{
+   background-color: #0086bd;
+   border-radius:5px;
+   color:white;
+   font-size: 0.7em;
+   padding:3px 5px;
+   display:flex;
+   justify-content: space-between;
+}
+.borrar{ width: 10px; 
+    height: 10px; 
+  
+    background:#FFd100;
+    border-radius: 10px;
+  
+     }
+     .tasks{
+        background-color: white;
+        border-radius:5px;
+     }

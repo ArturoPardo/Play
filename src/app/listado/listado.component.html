@@ -1,5 +1,8 @@
 <div class="listado">
-  <div id="lista">
-    <div class="user_list" *ngFor="let tarea of arrData"><div class="text">{{ tarea }}</div><div class="borro" (click)="borrado(tarea)"></div></div>
- 
+        <div id="lista">
+    <app-list *ngFor="let listObj of lists" [list]="listObj"> 
+
+
+    </app-list>
+</div>
 </div>

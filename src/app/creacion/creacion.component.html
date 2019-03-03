@@ -1,7 +1,7 @@
+
 <div class="form-creation"> 
   <div id="circle"></div>
-  <input type="text" placeholder="Send" [(ngModel)]="campoVacio" (keyup)="primeraFun($event)" />
+  <input type="text" placeholder="add list" (keyup.enter)="addList($event)" />
   <div id="animate"></div>
   <div class="off"(click)="vaciarLocal()"></div>
 </div>
-

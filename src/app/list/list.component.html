@@ -1,3 +1,7 @@
-<p>
-  list works!
-</p>
+
+ 
+  <div class="name"><div class="nameList">{{list.name }}</div><div class="borrar" (click)="delete()"></div></div>
+  <div class="tasks"><app-task *ngFor="let taskObj of list.tasks" [task]="taskObj"></app-task></div>
+  
+  <input type="text" placeholder="add task" />
+

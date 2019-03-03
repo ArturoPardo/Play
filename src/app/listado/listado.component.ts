@@ -1,17 +1,12 @@
-import { Component, OnInit, Input, Output,EventEmitter  } from '@angular/core';
-
+import { Component,OnInit, Input } from '@angular/core';
+import { List } from '../models.interface';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements OnInit {
-  @Input() arrData;
-  @Output() borrarTarea = new EventEmitter();
-  borrado(tarea){
-    this.borrarTarea.emit(tarea);
-    console.log('borrarTarea');
-  }
+  @Input() lists: Array<List>;
   constructor() { }
 
   ngOnInit() {
