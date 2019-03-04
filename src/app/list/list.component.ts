@@ -20,8 +20,6 @@ export class ListComponent{
   addTask(ev){
     if (ev.target.value.trim() !== '') {
       this.dataService.addNewTask(ev.target.value.trim(), this.list);
-      console.log(ev.target.value);
-      console.log(this.list.listId);
       ev.target.value = '';
       
     }

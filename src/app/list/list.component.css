@@ -5,7 +5,10 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #87858545;
-  padding-bottom: 5px;
+height: 10px;
+
+padding:3px 0px;
+box-sizing: content-box;
 
 }
 
@@ -16,16 +19,29 @@
 }
 
 .tasks {
-margin-bottom: 5px;
+ 
   color: #808080;
-  font-size: 0.6em;
+  font-size: 0.7em;
   font-weight: normal;
+  margin:0;
 }
 input {
+   color:#686868af;
   width: 100%;
   border: none;
   padding-left: 5px;
   padding-bottom: 5px;
+  font-size: 0.7em;
+  margin:0;
 
-  margin-bottom: 10px;
+  
+}
+
+input:focus{
+	outline:0px;
+}
+
+::placeholder{
+   color:#686868af;
+   
 }

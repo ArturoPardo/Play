@@ -135,7 +135,14 @@ export class DataManagerService {
       name,
       tasks: [],
     };
-    this.data.lists.push(newList);
+    if(this.data.lists.length == 3 ){ if (confirm('Completed list!! - Remove the all list? ')) {
+      this.vaciandoLocal();
+    }}
+    else{
+      this.data.lists.push(newList);
+      console.log(this.data.lists.length);
+    }
+ 
   }
 
 
@@ -150,10 +157,17 @@ export class DataManagerService {
       createdAt: new Date(),
       modifiedAt: new Date()
     };
-
+   
     this.data.lists = this.data.lists.map(listObj => {
       if (listObj.listId === list.listId) {
-        listObj.tasks.push(newTask);
+
+        if(listObj.tasks.length == 3 ){ if (confirm('Completed Task list!! - Remove the all Tasks list? ')) {
+          console.log(listObj.tasks.length);
+        }}
+
+        else{listObj.tasks.push(newTask);}
+        
+        
       }
       return listObj;
     });
