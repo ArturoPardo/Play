@@ -1,0 +1,11 @@
+.borrarTask{
+    width: 10px;
+    height: 10px;
+    background: #0086bd;  
+}
+.task{
+    display:flex;
+    justify-content: space-between;
+    color:#00a168;
+    border-bottom: 1px solid #87858545;
+}
