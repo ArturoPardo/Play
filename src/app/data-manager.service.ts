@@ -135,7 +135,7 @@ export class DataManagerService {
       name,
       tasks: [],
     };
-    if(this.data.lists.length == 3 ){ if (confirm('Completed list!! - Remove the all list? ')) {
+    if(this.data.lists.length == 6 ){ if (confirm('Completed list!! - Remove the all list? ')) {
       this.vaciandoLocal();
     }}
     else{
@@ -145,7 +145,32 @@ export class DataManagerService {
  
   }
 
+  mostrarTaskSer(ev:string){
+    const now = new Date();
+    const newList: List = {
+      listId: Date.now(),
+      createdAt: now,
+      modifiedAt: now,
+      name,
+      tasks: [],
+    };
+    console.log("esto llegaaaaaa" +ev);
 
+    let arreglo = this.data.lists;
+   let busqueda = ev;
+    console.log("esto busqueda" +busqueda);
+    let indice = arreglo.findIndex(list=> list.name=== busqueda);
+    console.log("El elemento buscado está en el índice ", indice);
+    
+  var lista = document.getElementsByClassName("tasks") as HTMLCollectionOf < HTMLElement > ;
+
+
+
+  lista[indice].style.display = "block";
+
+  
+
+  }
 
   addNewTask(text: string, list: List) {
     const newTask: Task = {
@@ -161,7 +186,7 @@ export class DataManagerService {
     this.data.lists = this.data.lists.map(listObj => {
       if (listObj.listId === list.listId) {
 
-        if(listObj.tasks.length == 3 ){ if (confirm('Completed Task list!! - Remove the all Tasks list? ')) {
+        if(listObj.tasks.length == 6 ){ if (confirm('Completed Task list!! - Remove the all Tasks list? ')) {
           console.log(listObj.tasks.length);
         }}
 

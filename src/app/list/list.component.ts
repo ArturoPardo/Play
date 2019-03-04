@@ -11,6 +11,14 @@ export class ListComponent{
   @Input() list: List;
   
   constructor(private dataService: DataManagerService) {}
+myTask ='';
+ mostraTasks(ev:string){
+  
+  this.dataService.mostrarTaskSer(ev);
+  console.log("esto es ev"+ev);
+ }
+
+
 
   delete() {
     if (confirm('Do you really want to delete the list ' + this.list.name)) {
