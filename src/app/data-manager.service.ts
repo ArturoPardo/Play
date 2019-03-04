@@ -135,7 +135,7 @@ export class DataManagerService {
       name,
       tasks: [],
     };
-    if(this.data.lists.length == 6 ){ if (confirm('Completed list!! - Remove the all list? ')) {
+    if(this.data.lists.length == 5 ){ if (confirm('Completed list!! - Remove the all list? ')) {
       this.vaciandoLocal();
     }}
     else{
@@ -186,7 +186,7 @@ export class DataManagerService {
     this.data.lists = this.data.lists.map(listObj => {
       if (listObj.listId === list.listId) {
 
-        if(listObj.tasks.length == 6 ){ if (confirm('Completed Task list!! - Remove the all Tasks list? ')) {
+        if(listObj.tasks.length == 5 ){ if (confirm('Completed Task list!! - Remove the all Tasks list? ')) {
           console.log(listObj.tasks.length);
         }}
 

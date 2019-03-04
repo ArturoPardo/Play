@@ -7,6 +7,11 @@
     display:flex;
     justify-content: space-between;
     color:#00a168;
+    padding-left: 15px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     border-bottom: 1px solid #87858545;
-    ;
+    font-style: italic;
+    
+    
 }
