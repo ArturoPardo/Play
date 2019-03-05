@@ -10,6 +10,7 @@ import { BoardComponent } from './board/board.component';
 import { TaskComponent } from './task/task.component';
 import { DataManagerService } from './data-manager.service';
 import { ListadoComponent } from './listado/listado.component';
+import { CronoComponent } from './crono/crono.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ListadoComponent } from './listado/listado.component';
     ListComponent,
     BoardComponent,
     TaskComponent,
-    ListadoComponent
+    ListadoComponent,
+    CronoComponent
   ],
   imports: [
     BrowserModule,

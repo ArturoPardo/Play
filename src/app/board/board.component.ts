@@ -8,6 +8,7 @@ import { Data } from '../models.interface';
   styleUrls: ['./board.component.css'],
 })
 export class BoardComponent implements OnInit {
+  
   data: Data;
   constructor(private dataManager: DataManagerService) {}
 

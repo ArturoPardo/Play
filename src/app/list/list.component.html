@@ -1,8 +1,17 @@
 
+<!--  
+  <div class="name" (click)="mostraTasks(list.name)"><div class="nameList">{{list.name }}</div><div class="borrar" (click)="delete()"></div></div> -->
+  <div class="name" (click)="siExiste()"><div class="nameList">{{list.name }}</div><div class="borrar" (click)="delete()"></div></div>
+  <div class="tasks">
+   
+
+      <div *ngIf="showDiv">
+      <app-task *ngFor="let taskObj of list.tasks" [task]="taskObj"></app-task>
  
-  <div class="name" (click)="mostraTasks(list.name)"><div class="nameList">{{list.name }}</div><div class="borrar" (click)="delete()"></div></div>
-  <div class="tasks"><app-task *ngFor="let taskObj of list.tasks" [task]="taskObj"></app-task>
-    <input type="text"  placeholder="..add card"  (keyup.enter)="addTask($event)">
+   
+  
+    <input type="text" class="input" placeholder="..add card"  (keyup.enter)="addTask($event)">
+  </div>
   </div>
 
 

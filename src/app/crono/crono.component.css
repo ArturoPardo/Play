@@ -1,0 +1,25 @@
+.bloque {
+  width: 50%;
+  position: absolute;
+  height: 50%;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+}
+
+#roto {
+
+  float: left;
+  position: absolute;
+  bottom: 20px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  
+  border-right:10px solid transparent;
+  border-top:10px solid transparent;
+  border-left:10px solid transparent;
+  border-bottom:10px solid rgba(193, 193, 193, 1);
+
+
+}

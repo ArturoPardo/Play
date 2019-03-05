@@ -6,12 +6,61 @@ import { List, Task} from './models.interface';
   providedIn: 'root'
 })
 export class DataManagerService {
+  showDiv: boolean = false;
+  
+ 
   data: {
     lists: Array < List >
   } = {
-    lists: [],
+    lists: [
+      {
+        listId: 0,
+        createdAt: new Date(),
+        modifiedAt: new Date(),
+        name: 'to do',
+        tasks: [
+          {
+            listId: 0,
+            taskId: 0,
+            text: 'aprender angular',
+            completed: false,
+            color: 'white',
+            createdAt: new Date(),
+            modifiedAt: new Date(),
+          },
+          {
+            listId: 0,
+            taskId: 1,
+            text: 'aprender js',
+            completed: false,
+            color: 'white',
+            createdAt: new Date(),
+            modifiedAt: new Date(),
+          },
+        ],
+      },
+      {
+        listId: 1,
+        createdAt: new Date(),
+        modifiedAt: new Date(),
+        name: 'doing',
+        tasks: [
+          {
+            listId: 1,
+            taskId: 0,
+            text: 'aprender typescript',
+            completed: false,
+            color: 'white',
+            createdAt: new Date(),
+            modifiedAt: new Date(),
+          },
+        ],
+      },
+    ],
   };
   // --------------------------- fin---------------
+
+
 
   getData() {
     return this.data;
@@ -135,15 +184,34 @@ export class DataManagerService {
       name,
       tasks: [],
     };
-    if(this.data.lists.length == 5 ){ if (confirm('Completed list!! - Remove the all list? ')) {
-      this.vaciandoLocal();
-    }}
+ 
+    let arreglo = this.data.lists;
+    let busqueda = newList.name;
+    let indice = arreglo.findIndex(list=> list.name=== busqueda);
+   console.log(indice);
+    if(indice !== -1 ){ confirm('Nombre repetido') }
     else{
+      if(this.data.lists.length == 5 ){ confirm('Completed  list!! - Remove the all Tasks list? ')}
+      else{
       this.data.lists.push(newList);
-      console.log(this.data.lists.length);
+     
+      }
     }
+
+    // ------------------------crono----------------
+    var roto = document.getElementById("roto");
+   
+    for (let i = 0; i < this.data.lists.length +1; i++){ 
+      
+      var a =22.5;
+      var b = a * i;
+      roto.style.transform = 'rotate(' + b + 'deg)';
+      console.log("esto es la rotacion"+b);
+    }
+
  
   }
+  
 
   mostrarTaskSer(ev:string){
     const now = new Date();
@@ -168,11 +236,13 @@ export class DataManagerService {
 
   lista[indice].style.display = "block";
 
-  
+
 
   }
+ 
 
   addNewTask(text: string, list: List) {
+    
     const newTask: Task = {
       listId: list.listId,
       taskId: Date.now(),
@@ -182,17 +252,23 @@ export class DataManagerService {
       createdAt: new Date(),
       modifiedAt: new Date()
     };
-   
+    let arreglo = this.data.lists;
+    let busqueda = list.name;
+    let indice = arreglo.findIndex(list=> list.name=== busqueda);
+     console.log("El elemento buscado en task ", indice);
+
     this.data.lists = this.data.lists.map(listObj => {
       if (listObj.listId === list.listId) {
 
-        if(listObj.tasks.length == 5 ){ if (confirm('Completed Task list!! - Remove the all Tasks list? ')) {
-          console.log(listObj.tasks.length);
-        }}
+        if(listObj.tasks.length == 5 ){
+          
+          var lista = document.getElementsByClassName("input") as HTMLCollectionOf < HTMLElement > ;
+          lista[indice].style.display = "none";
+       }
 
-        else{listObj.tasks.push(newTask);}
+        else{listObj.tasks.push(newTask);
         
-        
+      }
       }
       return listObj;
     });

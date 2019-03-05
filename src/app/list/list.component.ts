@@ -8,6 +8,7 @@ import { DataManagerService } from '../data-manager.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent{
+  showDiv: boolean = false;
   @Input() list: List;
   
   constructor(private dataService: DataManagerService) {}
@@ -16,6 +17,7 @@ myTask ='';
   
   this.dataService.mostrarTaskSer(ev);
   console.log("esto es ev"+ev);
+
  }
 
 
@@ -33,5 +35,11 @@ myTask ='';
     }
    
   }
-
+  siExiste() {
+   
+    this.showDiv = !this.showDiv;
+    console.log(this.showDiv );
+   
+  }
+  
 }

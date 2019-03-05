@@ -5,6 +5,8 @@
     height: 50%;
     z-index:1 ;
   }
+
+
  .off{
   width: 10px; 
   height: 10px; 
@@ -23,13 +25,16 @@
     border: none;
     padding: 5px;
     background-color: transparent;
-    border-bottom: 1px solid #c20233;
+    border-bottom: 1px solid #FFd100;
     color: #000;
     float:left;
     margin: 10px;
     color: #0086bd;
     font-weight: bold;
   
+  }
+  ::placeholder{
+    color:#0086bd;
   }
   
   input:focus {

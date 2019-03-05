@@ -6,7 +6,7 @@ import { DataManagerService } from '../data-manager.service';
   styleUrls: ['./creacion.component.css']
 })
 export class CreacionComponent  {
-  campoVacio = '';
+
   constructor(private dataService: DataManagerService) {}
   addList(ev)  {
      console.log('esta llegando!');
@@ -20,7 +20,6 @@ export class CreacionComponent  {
     this.dataService.vaciandoLocal();
   }
   
- 
-  
+
 
 }
