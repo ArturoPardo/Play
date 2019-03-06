@@ -1,0 +1,36 @@
+.center{
+    
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    height:100px;
+    width:200px;
+    border-radius: 0 0 200px 200px;
+  
+   
+    background-color: #0086bd;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left:auto;
+    margin-right:auto;
+  
+}
+form{
+    background-color:pink;
+    width:150px;
+    margin-left:auto;
+    margin-right:auto;
+}
+input{
+    margin-left:auto;
+    margin-right:auto;
+    border:none;
+    width:100%;
+    padding: 5px;
+    background-color: orange;
+    border-bottom: 1px solid #000;
+    margin-bottom: 3px;
+}

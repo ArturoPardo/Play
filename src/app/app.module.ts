@@ -11,6 +11,9 @@ import { TaskComponent } from './task/task.component';
 import { DataManagerService } from './data-manager.service';
 import { ListadoComponent } from './listado/listado.component';
 import { CronoComponent } from './crono/crono.component';
+import { LoginViewComponent } from './login-view/login-view.component';
+import { RegisterViewComponent } from './register-view/register-view.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { CronoComponent } from './crono/crono.component';
     BoardComponent,
     TaskComponent,
     ListadoComponent,
-    CronoComponent
+    CronoComponent,
+    LoginViewComponent,
+    RegisterViewComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
