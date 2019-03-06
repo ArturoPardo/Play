@@ -149,6 +149,70 @@ export class DataManagerService {
       }
     }
   }
+  giroVerde() {
+    var list = document.getElementsByClassName("cont") as HTMLCollectionOf < HTMLElement > ;
+    var pes = 0;
+    var pisto = 0;
+    var pas = 90;
+    var idea = setInterval(rotate, 5);
+    var idea2 = setInterval(rotate2, 5);
+    var idea3 = setInterval(rotate3, 1);
+
+    function rotate() {
+      if (pes == -90 ) {
+        clearInterval(idea);
+        console.log("g-cont1");
+      } else {
+        pes--;
+        
+      
+        list[0].style.transform = 'rotate(' + pes + 'deg)';
+      
+      }
+    } 
+    function rotate2() {
+      console.log("mi pisto" + pisto);
+      if (pisto == 134) {
+        clearInterval(idea2);
+      
+      } else {
+        pisto++;
+        console.log(pisto);
+       
+        // list[0].style.left = pisto + 'px';
+        list[0].style.marginTop = pisto + 'px';
+       
+     
+      
+      }
+    }
+
+    function rotate3() {
+      var circle = document.getElementById("circle");
+      circle.style.display = "block";
+      if (pas == 0) {
+        clearInterval(idea3);
+      
+      } else {
+       pas--;
+       
+       
+        // list[0].style.left = pisto + 'px';
+       circle.style.bottom = pas + '%';
+       
+     
+      
+      }
+    }
+
+
+
+
+
+
+
+
+  }
   circle() {
     var pas = 0;
     var ide = setInterval(uper, 15);
@@ -269,6 +333,7 @@ export class DataManagerService {
         }
 
         listObj.tasks.push(newTask);
+        setTimeout(this.giroVerde, 0.1);
 
       }
       return listObj;
