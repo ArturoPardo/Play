@@ -1,25 +1,26 @@
-import { Injectable } from '@angular/core'; 
-import { List, Task} from './models.interface';
-  
+import {
+  Injectable
+} from '@angular/core';
+import {
+  List,
+  Task
+} from './models.interface';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataManagerService {
-  showDiv: boolean = false;
-  
- 
+
   data: {
     lists: Array < List >
   } = {
-    lists: [
-      {
+    lists: [{
         listId: 0,
         createdAt: new Date(),
         modifiedAt: new Date(),
         name: 'to do',
-        tasks: [
-          {
+        tasks: [{
             listId: 0,
             taskId: 0,
             text: 'aprender angular',
@@ -44,23 +45,24 @@ export class DataManagerService {
         createdAt: new Date(),
         modifiedAt: new Date(),
         name: 'doing',
-        tasks: [
-          {
-            listId: 1,
-            taskId: 0,
-            text: 'aprender typescript',
-            completed: false,
-            color: 'white',
-            createdAt: new Date(),
-            modifiedAt: new Date(),
-          },
-        ],
+        tasks: [{
+          listId: 1,
+          taskId: 0,
+          text: 'aprender typescript',
+          completed: false,
+          color: 'white',
+          createdAt: new Date(),
+          modifiedAt: new Date(),
+        }, ],
       },
     ],
   };
   // --------------------------- fin---------------
 
+  siExisteSer() {
+    console.log("llega a data");
 
+  }
 
   getData() {
     return this.data;
@@ -184,36 +186,38 @@ export class DataManagerService {
       name,
       tasks: [],
     };
- 
+
     let arreglo = this.data.lists;
     let busqueda = newList.name;
-    let indice = arreglo.findIndex(list=> list.name=== busqueda);
-   console.log(indice);
-    if(indice !== -1 ){ confirm('Nombre repetido') }
-    else{
-      if(this.data.lists.length == 5 ){ confirm('Completed  list!! - Remove the all Tasks list? ')}
-      else{
-      this.data.lists.push(newList);
-     
+    let indice = arreglo.findIndex(list => list.name === busqueda);
+    console.log(indice);
+    if (indice !== -1) {
+      confirm('Nombre repetido')
+    } else {
+      if (this.data.lists.length == 4) {
+        confirm('Completed  list!! - Remove the all Tasks list? ')
+      } else {
+        this.data.lists.push(newList);
+
       }
     }
 
     // ------------------------crono----------------
     var roto = document.getElementById("roto");
-   
-    for (let i = 0; i < this.data.lists.length +1; i++){ 
-      
-      var a =22.5;
+
+    for (let i = 0; i < this.data.lists.length + 1; i++) {
+
+      var a = 22.5;
       var b = a * i;
       roto.style.transform = 'rotate(' + b + 'deg)';
-      console.log("esto es la rotacion"+b);
+      console.log("esto es la rotacion" + b);
     }
 
- 
-  }
-  
 
-  mostrarTaskSer(ev:string){
+  }
+
+
+  mostrarTaskSer(ev: string) {
     const now = new Date();
     const newList: List = {
       listId: Date.now(),
@@ -222,27 +226,23 @@ export class DataManagerService {
       name,
       tasks: [],
     };
-    console.log("esto llegaaaaaa" +ev);
+    console.log("esto llegaaaaaa" + ev);
 
     let arreglo = this.data.lists;
-   let busqueda = ev;
-    console.log("esto busqueda" +busqueda);
-    let indice = arreglo.findIndex(list=> list.name=== busqueda);
+    let busqueda = ev;
+    console.log("esto busqueda" + busqueda);
+    let indice = arreglo.findIndex(list => list.name === busqueda);
     console.log("El elemento buscado está en el índice ", indice);
-    
-  var lista = document.getElementsByClassName("tasks") as HTMLCollectionOf < HTMLElement > ;
 
+    var lista = document.getElementsByClassName("tasks") as HTMLCollectionOf < HTMLElement > ;
 
-
-  lista[indice].style.display = "block";
-
-
+    lista[indice].style.display = "block";
 
   }
- 
+
 
   addNewTask(text: string, list: List) {
-    
+
     const newTask: Task = {
       listId: list.listId,
       taskId: Date.now(),
@@ -254,21 +254,22 @@ export class DataManagerService {
     };
     let arreglo = this.data.lists;
     let busqueda = list.name;
-    let indice = arreglo.findIndex(list=> list.name=== busqueda);
-     console.log("El elemento buscado en task ", indice);
+    let indice = arreglo.findIndex(list => list.name === busqueda);
+    console.log("INDICE DE LA LISTA ", indice);
 
     this.data.lists = this.data.lists.map(listObj => {
-      if (listObj.listId === list.listId) {
 
-        if(listObj.tasks.length == 5 ){
-          
+      if (listObj.listId === list.listId) {
+        console.log("NUMERO DE TASKS", listObj.tasks.length);
+        if (listObj.tasks.length == 2) {
+          console.log("55555555555");
+          console.log("INDICE DE LA LISTA ", indice);
           var lista = document.getElementsByClassName("input") as HTMLCollectionOf < HTMLElement > ;
           lista[indice].style.display = "none";
-       }
+        }
 
-        else{listObj.tasks.push(newTask);
-        
-      }
+        listObj.tasks.push(newTask);
+
       }
       return listObj;
     });
@@ -288,19 +289,33 @@ export class DataManagerService {
   deleteList(listId: number) {
     this.data.lists = this.data.lists.filter(list => list.listId !== listId);
   }
-  deleteTaskSer(task:Task) {
-    console.log('mi id task' +task.taskId);
-    console.log('mi data'+this.data.lists);
-  
-    this.data.lists = this.data.lists.map(listObj=>{
-      if(listObj.listId === task.listId){
-        console.log("premio");
+  deleteTaskSer(task: Task) {
+
+
+    let arreglo = this.data.lists;
+    let busqueda = task.listId;
+    console.log("esto busqueda" + busqueda);
+    let indice = arreglo.findIndex(list => list.listId === busqueda);
+    console.log("El elemento buscado está en el índice ", indice);
+
+
+    this.data.lists = this.data.lists.map(listObj => {
+
+      if (listObj.listId === task.listId) {
         listObj.tasks = listObj.tasks.filter(objTask => objTask.taskId !== task.taskId)
+        console.log("mi cuenta" + listObj.tasks.length);
+        if (listObj.tasks.length < 3) {
+
+          var arg = document.getElementsByClassName("input") as HTMLCollectionOf < HTMLElement > ;
+          arg[indice].style.display = "block";
+        }
+
       }
+
       return listObj;
     });
-    
-   
-    
+
+
+
   }
 }
