@@ -9,8 +9,8 @@
     width:200px;
     border-radius: 0 0 200px 200px;
   
-   
-    background-color:#00a168;
+   padding-top: 5px;
+    background-color:gold;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -19,8 +19,8 @@
   
 }
 form{
-    background-color:pink;
-    width:135px;
+  
+    width: 100%;
     margin-left:auto;
     margin-right:auto;
     text-align: center;
@@ -29,9 +29,9 @@ input{
     margin-left:auto;
     margin-right:auto;
     border:none;
-    width:100%;
+    width:140px;
     padding: 5px;
-    background-color: orange;
+    background-color: transparent;
     border-bottom: 1px solid #000;
     margin-bottom: 3px;
 }

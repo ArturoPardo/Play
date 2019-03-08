@@ -39,7 +39,7 @@ myTask ='';
    
    this.showDiv = !this.showDiv;
   console.log(this.showDiv );
-    this.dataService. siExisteSer();
+    this.dataService.siExisteSer(this.showDiv);
    
   }
   

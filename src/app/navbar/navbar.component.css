@@ -1,7 +1,7 @@
 nav{
     width: 200px;
     height: 100px;
-    background-color: gold;
+    background-color: #0086bd;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
 
@@ -35,17 +35,20 @@ nav{
     margin-right:auto;
     margin-top: 5px;
     border-right:25px solid transparent;
-    border-top:25px solid #0086bd;
+    border-top:25px solid #00a168;
     border-left:25px solid transparent;
 
 }
 .links{
-    background-color: red;
+   
     display:flex;
     justify-content: space-between;
     padding:0px 15px;
+     
+    width: 100%;
 }
 a{
  font-size: 0.8em;
  text-decoration: none;
+color: gold;
 }

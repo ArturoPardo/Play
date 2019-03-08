@@ -5,13 +5,14 @@ import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterViewComponent } from './register-view/register-view.component';
 
 const routes: Routes = [{
-  path: '',
+  path: 'board',
   component: BoardComponent,
 },
 {
   path: 'login',
   component:LoginViewComponent,
 },
+
 {
 path: 'register',
 component:RegisterViewComponent,
@@ -19,7 +20,7 @@ component:RegisterViewComponent,
 
 {
   path: '**',
-  redirectTo: '',
+  redirectTo: 'login',
   pathMatch: 'full',
 },
 ];

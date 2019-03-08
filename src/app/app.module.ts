@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreacionComponent } from './creacion/creacion.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './list/list.component';
 import { BoardComponent } from './board/board.component';
 import { TaskComponent } from './task/task.component';
@@ -32,6 +32,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [DataManagerService],

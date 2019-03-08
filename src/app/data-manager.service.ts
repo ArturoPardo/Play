@@ -11,56 +11,29 @@ import {
   providedIn: 'root'
 })
 export class DataManagerService {
+  numero: number;
+  triangles: string[] = [];
+
 
   data: {
     lists: Array < List >
   } = {
-    lists: [{
-        listId: 0,
-        createdAt: new Date(),
-        modifiedAt: new Date(),
-        name: 'to do',
-        tasks: [{
-            listId: 0,
-            taskId: 0,
-            text: 'aprender angular',
-            completed: false,
-            color: 'white',
-            createdAt: new Date(),
-            modifiedAt: new Date(),
-          },
-          {
-            listId: 0,
-            taskId: 1,
-            text: 'aprender js',
-            completed: false,
-            color: 'white',
-            createdAt: new Date(),
-            modifiedAt: new Date(),
-          },
-        ],
-      },
-      {
-        listId: 1,
-        createdAt: new Date(),
-        modifiedAt: new Date(),
-        name: 'doing',
-        tasks: [{
-          listId: 1,
-          taskId: 0,
-          text: 'aprender typescript',
-          completed: false,
-          color: 'white',
-          createdAt: new Date(),
-          modifiedAt: new Date(),
-        }, ],
-      },
-    ],
+    lists: []
+
   };
   // --------------------------- fin---------------
 
-  siExisteSer() {
-    console.log("llega a data");
+  siExisteSer(showDiv: boolean) {
+    var i = 0;
+    if (showDiv == true) {
+
+      this.triangles.push("i");
+
+    } else {
+      this.triangles.splice(i, 1);
+    }
+
+    console.log("abiertas" + this.triangles.length);
 
   }
 
@@ -159,31 +132,32 @@ export class DataManagerService {
     var idea3 = setInterval(rotate3, 1);
 
     function rotate() {
-      if (pes == -90 ) {
+      if (pes == -90) {
         clearInterval(idea);
-        console.log("g-cont1");
+
       } else {
         pes--;
-        
-      
+
+
         list[0].style.transform = 'rotate(' + pes + 'deg)';
-      
+
       }
-    } 
+    }
+
     function rotate2() {
-      console.log("mi pisto" + pisto);
+
       if (pisto == 134) {
         clearInterval(idea2);
-      
+
       } else {
         pisto++;
-        console.log(pisto);
-       
+
+
         // list[0].style.left = pisto + 'px';
         list[0].style.marginTop = pisto + 'px';
-       
-     
-      
+
+
+
       }
     }
 
@@ -192,16 +166,16 @@ export class DataManagerService {
       circle.style.display = "block";
       if (pas == 0) {
         clearInterval(idea3);
-      
+
       } else {
-       pas--;
-       
-       
+        pas--;
+
+
         // list[0].style.left = pisto + 'px';
-       circle.style.bottom = pas + '%';
-       
-     
-      
+        circle.style.bottom = pas + '%';
+
+
+
       }
     }
 
@@ -233,6 +207,7 @@ export class DataManagerService {
   }
 
   addNewList(name: string) {
+
     var lista = document.getElementById("animate");
     lista.style.display = "block";
 
@@ -306,7 +281,7 @@ export class DataManagerService {
 
 
   addNewTask(text: string, list: List) {
-
+    setTimeout(this.giroVerde, 0.1);
     const newTask: Task = {
       listId: list.listId,
       taskId: Date.now(),
@@ -316,24 +291,55 @@ export class DataManagerService {
       createdAt: new Date(),
       modifiedAt: new Date()
     };
-    let arreglo = this.data.lists;
-    let busqueda = list.name;
-    let indice = arreglo.findIndex(list => list.name === busqueda);
-    console.log("INDICE DE LA LISTA ", indice);
 
     this.data.lists = this.data.lists.map(listObj => {
 
       if (listObj.listId === list.listId) {
-        console.log("NUMERO DE TASKS", listObj.tasks.length);
-        if (listObj.tasks.length == 2) {
-          console.log("55555555555");
-          console.log("INDICE DE LA LISTA ", indice);
-          var lista = document.getElementsByClassName("input") as HTMLCollectionOf < HTMLElement > ;
-          lista[indice].style.display = "none";
-        }
+        console.log("AHORA ABIERTAS", this.triangles.length);
+
+        // ------id de nuestra lista
+        console.log(list.createdAt);
+        // ------id de nuestra lista
 
         listObj.tasks.push(newTask);
-        setTimeout(this.giroVerde, 0.1);
+
+        if (listObj.tasks.length > 3 || listObj.tasks.length == 3) {
+          // ------saber lista deonde nos encontramos-posicion-----
+          let arreglo = this.data.lists;
+          let busqueda = listObj.listId;
+          let indice = arreglo.findIndex(list => list.listId === busqueda);
+          console.log("El elemento buscado está  DE LA LISTA ", indice);
+          // ------saber lista deonde nos encontramos-posicion-----
+
+
+          let busqueda3 = listObj.listId;
+          console.log("esto busqueda" + busqueda3);
+          var result3 = this.data.lists.filter(list => list.listId == listObj.listId);
+          var result4 = result3.map(list => list.createdAt);
+          console.log("mi CREACION", result4);
+
+
+          var result2 = this.data.lists.map(list => list.createdAt);
+          console.log("TODAS FECHAS DE CREACION", result2);
+
+
+          // ------busqueda de listas menores que nuestra fecha-----
+          let busqueda_menores = list.createdAt;
+          var menores = this.data.lists.filter(list => list.createdAt < busqueda_menores);
+          console.log("MENORES", JSON.stringify(menores.length));
+          // ------busqueda de listas menores que nuestra fecha-----
+
+          //  ------------- filtramos siempre las listas inferiores sin tasks
+          var result = menores.filter(listObj => listObj.tasks.length == 0);
+          console.log("LISTAS SIN TASK", result);
+          console.log("El elemento buscado está en el índice ", indice);
+          indice = indice - result.length;
+          //  ------------- filtramos siempre las listas inferiores sin tasks
+
+
+          var listo = document.getElementsByClassName("input") as HTMLCollectionOf < HTMLElement > ;
+          listo[indice].style.display = "none";
+        }
 
       }
       return listObj;
