@@ -1,20 +1,25 @@
-
 <!--  
+ 
+ 
   <div class="name" (click)="mostraTasks(list.name)"><div class="nameList">{{list.name }}</div><div class="borrar" (click)="delete()"></div></div> -->
-<div class="name" (click)="siExiste()"><div class="nameList">{{list.name }}</div><div class="borrar" (click)="delete()"></div></div> 
- 
-  
-  <div class="tasks">
-   
+<div class="name" (click)="siExiste()">
+  <div class="nameList"><span [hidden]="!editing" (dblclick)="editList()">{{ list.name }}</span><span [hidden]="editing">
+    <input class="text" (keyup.enter)="editListName()" Placeholder=" ... Re-name list" [(ngModel)]="newListName" (blur)="editLoose()" /></span></div>   
+  <div class="borrar" (click)="delete()"></div>
+</div>
 
-   <div *ngIf="showDiv"> 
-          <div class="prueba">prueba</div>
-      <app-task *ngFor="let taskObj of list.tasks" [task]="taskObj"></app-task>
- 
-   
-  
-    <input type="text" class="input" placeholder="..add card"  (keyup.enter)="addTask($event)">
-</div> 
+
+<div class="tasks">
+
+
+
+
+  <div *ngIf="showDiv">
+    <div class="prueba">prueba</div>
+    <app-task *ngFor="let taskObj of list.tasks" [task]="taskObj"></app-task>
+
+
+
+    <input type="text" class="input" placeholder="..add card" (keyup.enter)="addTask($event)">
   </div>
-
-
+</div>

@@ -14,6 +14,7 @@ import { CronoComponent } from './crono/crono.component';
 import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterViewComponent } from './register-view/register-view.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { InformationComponent } from './information/information.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     CronoComponent,
     LoginViewComponent,
     RegisterViewComponent,
-    NavbarComponent
+    NavbarComponent,
+    InformationComponent
   ],
   imports: [
     BrowserModule,

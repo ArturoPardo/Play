@@ -32,10 +32,55 @@ input{
     width:140px;
     padding: 5px;
     background-color: transparent;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #87858545;
     margin-bottom: 3px;
+    text-align: center;
+}
+input:focus{
+    outline:0px;
+
 }
 .submit{
     background-color: grey;
     width: 100px;
 }
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #0086bd;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 0.7em;
+    padding: 3px;
+    width: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    vertical-align:middle
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 15px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

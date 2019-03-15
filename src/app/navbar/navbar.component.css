@@ -1,7 +1,7 @@
 nav{
     width: 200px;
     height: 100px;
-    background-color: #0086bd;
+    background-color:  #00a168;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
 
@@ -14,6 +14,7 @@ nav{
     margin-right:auto;
     margin-top:20%;
    
+   
 }
 .triangle_up{
    
@@ -21,9 +22,9 @@ nav{
     height: 0;
     margin-left:auto;
     margin-right:auto;
-    
+   padding-top: 18px;
     border-right:25px solid transparent;
-    border-top:25px solid transparent;
+  
     border-left:25px solid transparent;
     border-bottom:25px solid#c20233;
 }
@@ -35,7 +36,7 @@ nav{
     margin-right:auto;
     margin-top: 5px;
     border-right:25px solid transparent;
-    border-top:25px solid #00a168;
+    border-top:25px solid #0086bd;
     border-left:25px solid transparent;
 
 }
@@ -43,12 +44,25 @@ nav{
    
     display:flex;
     justify-content: space-between;
-    padding:0px 15px;
-     
+    padding:8px 8px;
+  
+     bottom:0px ;
     width: 100%;
 }
 a{
- font-size: 0.8em;
+    font-size: 0.7em;
  text-decoration: none;
-color: gold;
+
+width: 80px;
+text-align: center;
+padding: 3px 0px;
+border-radius: 5px 5px 0px 0px;
+}
+.login_a {
+    background-color:gold;
+  
+}
+.register_a {
+    background-color:white;
+  
 }

@@ -8,9 +8,9 @@
     height:100px;
     width:200px;
     border-radius: 0 0 200px 200px;
-  
+    padding-top: 5px;
    
-    background-color: #0086bd;
+    background-color:white;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -19,18 +19,68 @@
   
 }
 form{
-    background-color:pink;
-    width:150px;
+  
+    width: 100%;
     margin-left:auto;
     margin-right:auto;
+    text-align: center;
 }
 input{
     margin-left:auto;
     margin-right:auto;
     border:none;
-    width:100%;
+    width:140px;
     padding: 5px;
-    background-color: orange;
-    border-bottom: 1px solid #000;
+    background-color: transparent;
+    border-bottom: 1px solid #87858545;
     margin-bottom: 3px;
+    text-align: center;
 }
+input:focus{
+    outline:0px;
+
+}
+.submit{
+    background-color: grey;
+    width: 100px;
+}
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: gold;
+    border: none;
+    color: #3a3a3a;
+    text-align: center;
+    font-size: 0.7em;
+    padding: 3px;
+    width: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    vertical-align:middle
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 15px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

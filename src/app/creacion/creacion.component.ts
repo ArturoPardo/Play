@@ -6,12 +6,11 @@ import { DataManagerService } from '../data-manager.service';
   styleUrls: ['./creacion.component.css']
 })
 export class CreacionComponent  {
-
+  editing: boolean = true;
   constructor(private dataService: DataManagerService) {}
+ 
   addList(ev)  {
-     console.log('esta llegando!');
     if (ev.keyCode === 13 && ev.target.value.trim() !== '') {
-      console.log('intro!');
       this.dataService.addNewList(ev.target.value.trim());
       ev.target.value = '';
     }
